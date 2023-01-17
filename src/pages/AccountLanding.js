@@ -21,6 +21,7 @@ const AccountLanding = () => {
 
     console.log(borrowedByMe);
     console.log(borrowedFromMe);
+    // eslint-disable-next-line
     const lentBook = async (b) => {
        await fetch("http://localhost:4000/bookbandits/lentbook", {
             method: "POST",

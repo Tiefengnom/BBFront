@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { useUserContext } from "../hooks/useUserContext";
 import AccountLanding from "../pages/AccountLanding";
-import { useUBContext } from "../hooks/useUBContext";
 
 const Login = () => {
     const [first_name, setfname] = useState("");
