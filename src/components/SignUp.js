@@ -16,11 +16,8 @@ const SignUp = () => {
     const[password,setPassword] = useState("")
     const[PLZ, setPLZ] = useState("")
     const[mail, setMail]= useState(null)
-    const[userid, setUserid] = useState("")
     const [error, setError] = useState(null)
-    const navigate = useNavigate();
     const {user, setUser} = useUserContext()
-    const {bBooks, setbBooks} = useUBContext()
     
     
 
@@ -43,6 +40,7 @@ const SignUp = () => {
 
         if (!response.ok) {
             setError(json.error)
+            console.log(error)
      }
      if (response.ok) {
         setfname("")

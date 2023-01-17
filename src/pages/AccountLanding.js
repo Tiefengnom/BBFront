@@ -22,7 +22,7 @@ const AccountLanding = () => {
     console.log(borrowedByMe);
     console.log(borrowedFromMe);
     const lentBook = async (b) => {
-        const response = await fetch("http://localhost:4000/bookbandits/lentbook", {
+       await fetch("http://localhost:4000/bookbandits/lentbook", {
             method: "POST",
             body: JSON.stringify({ bid: b }),
             headers: {
@@ -32,7 +32,7 @@ const AccountLanding = () => {
    
 
     const nolentBook = async (bookid,borrower) => {
-        const response = await fetch("http://localhost:4000/bookbandits/deniedbook", {
+        await fetch("http://localhost:4000/bookbandits/deniedbook", {
             method: "POST",
             body: JSON.stringify({borrowed: false, bid : bookid, user_id : user._id,borrower: borrower }),
             headers: {

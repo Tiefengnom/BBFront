@@ -10,7 +10,6 @@ function MyBooks() {
 
     const [books, setBooks] = useState(null);
     const { user } = useUserContext();
-    const { bBooks, setbBooks } = useUBContext();
     const [didDelete, setDidDelete] = useState(false);
 
     useEffect(() => {
