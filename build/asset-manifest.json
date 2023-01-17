@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.4a54cdb0.css",
-    "main.js": "/static/js/main.d5d47b78.js",
+    "main.css": "/static/css/main.b20581e0.css",
+    "main.js": "/static/js/main.fc31a8c0.js",
+    "static/media/flyer-boy.png": "/static/media/flyer-boy.f865b73d2783614d9d2d.png",
+    "static/media/book-open.png": "/static/media/book-open.2d46a0049b38ec9ade4e.png",
+    "static/media/flyer-girl.png": "/static/media/flyer-girl.68745a1880b5dfdbf5a4.png",
     "static/media/logo-orange.png": "/static/media/logo-orange.59e8315ecd93bc6c64e3.png",
-    "static/media/book-icon.png": "/static/media/book-icon.9cd5cc9c8aa8dd01c3b3.png",
     "index.html": "/index.html",
-    "main.4a54cdb0.css.map": "/static/css/main.4a54cdb0.css.map",
-    "main.d5d47b78.js.map": "/static/js/main.d5d47b78.js.map"
+    "main.b20581e0.css.map": "/static/css/main.b20581e0.css.map",
+    "main.fc31a8c0.js.map": "/static/js/main.fc31a8c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a54cdb0.css",
-    "static/js/main.d5d47b78.js"
+    "static/css/main.b20581e0.css",
+    "static/js/main.fc31a8c0.js"
   ]
 }
