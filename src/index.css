@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+body {
+  background: rgb(250,194,142);
+  background: radial-gradient(circle, rgba(250,194,142,1) 0%, rgba(255,255,162,1) 35%, rgba(255,210,180,1) 100%);
+  margin: 0;
+  font-family: "Poppins";
+  color:black;
+  font-size: 10pt;
+  
+}
+header {
+  background: #fff;
+}
+header .container {
+
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #333;
+  text-decoration: none;
+}
+.pages{
+  margin: 0;
+}
+.hero-text {
+  position: relative;
+  top:50px;
+}
+
+.Signin {
+height:100vh;
+display: flex;
+flex-direction: column;
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+}
+
+body p {
+  padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+
