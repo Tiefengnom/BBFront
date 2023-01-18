@@ -12,13 +12,19 @@ function SingleBook({port}) {
     const navigate = useNavigate();
     const { id } = useParams();
     
+    
 
-    useEffect(() => {
+    useEffect(() =>  {
         fetch(`https://sore-visor-dove.cyclic.app/bookbandits/collection/${id}`)
             .then((res) => res.json())
             .then((finalResult) => setFetchedBook(finalResult));
+          
         // eslint-disable-next-line
     }, []);
+
+   
+
+
 
     const handleClick = async () => {
         const response = await fetch(`https://sore-visor-dove.cyclic.app/bookbandits/collection/${id}`, {
@@ -74,7 +80,9 @@ function SingleBook({port}) {
                 Log in
             </button> {" "}
                 </div>
-            ) : !fetchedBook.borrowed ? (
+            ) : //user._id === fetchedBook.owner ? (<div>Its your own Book!</div>) :
+            
+            !fetchedBook.borrowed ? (
                 !btime ? (
                     <Datetime
                         input={false}
