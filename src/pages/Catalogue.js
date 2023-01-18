@@ -32,7 +32,7 @@ const genres = [
     { value: "adventure", label: "adventure" },
 ];
 
-function Catalogue() {
+function Catalogue({port}) {
     const navigate = useNavigate();
     const [books, setBooks] = useState(null);
     const [search, setSearch] = useState(null);
@@ -56,8 +56,10 @@ function Catalogue() {
     const [enabledFrom, setEnabledFrom] = useState();
     const [enabledBy, setEnabledBy] = useState();
 
+    // "http://localhost:4000/bookbandits/collection"
+
     const fetchBooks = async () => {
-        const response = await fetch("https://sore-visor-dove.cyclic.app/bookbandits/collection");
+        const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/collection');
         const json = await response.json();
 
         if (response.ok) {
@@ -79,7 +81,7 @@ function Catalogue() {
             return;
         }
 
-        const response = await fetch("http://localhost:4000/bookbandits/collection", {
+        const response = await fetch(`https://sore-visor-dove.cyclic.app/bookbandits/collection`, {
             method: "POST",
             body: JSON.stringify({ query: search, language: language, genre: genre }),
             headers: {
@@ -115,14 +117,14 @@ function Catalogue() {
                         <div className='checklist p-4 flex justify-center'>
                             <Checklist options={genres} placeholder='Select genre' setSelectedOption={setGenre} />
                         </div>
-                        <div className='flex align-middle justify-center mt-[20px]'>
+                        <div className='flex flex-col  justify-start md:flex-row align-middle md:justify-center mt-[20px] ml-4 text-left'>
                             <Toggle toggle={enabledBy} setToggle={setEnabledBy} label={"Available now"} to />
                             <Toggle toggle={enabledFrom} setToggle={setEnabledFrom} label={"Available via mail"} />
                         </div>
 
                        
                     </div>
-                    <form onSubmit={handleSubmit} className='checklist p-4 flex justify-center'>
+                    <form onSubmit={handleSubmit} className='checklist p-4 flex flex-col md:flex-row justify-center'>
                             <span className='h-fit'>
                                 <input
                                     onChange={(e) => setSearch(e.target.value)}
@@ -132,7 +134,7 @@ function Catalogue() {
                             </span>
                             <button
                                 type='submit'
-                                className='flex text-center bg-white w-fit bg-opacity-90 px-10 py-2 border-2 border-white-500  font-medium text-xs leading-tight rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer mb-8'>
+                                className=' ml-4 flex  bg-white w-fit bg-opacity-90 px-10 py-2 border-2 border-white-500  font-medium text-xs leading-tight rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer mb-6'>
                                 <p className='mr-1 p-0 text-md'>Apply Filters</p>
                                 <svg
                                     aria-hidden='true'
@@ -159,7 +161,7 @@ function Catalogue() {
         handleToggle={() => setAvailability(!availability)}
       /> */}
 
-                    <div className='p-2  bg-orange-50 bg-opacity-20 w-fit  rounded-sm'>
+                    <div className='p-2  w-full text-center  rounded-sm'>
                         <div className='p-2 m-auto'>
                             {searchedBooks === null ? (
                                 <div></div>

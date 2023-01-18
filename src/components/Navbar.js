@@ -29,7 +29,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <ul
-                    className={`md:flex md:items-center md:pb-0 pb-1 absolute md:static bg-white md:z-auto left-0 w-full md:w-auto md:pl-0 transition-all duration-500 ease-in ${
+                    className={`md:flex md:items-center md:pb-0 pb-1 absolute md:static bg-white md:z-auto left-0 w-full md:w-auto md:pl-0 md:pr-4 transition-all duration-500 ease-in ${
                         visibility ? "top-12 " : "top-[-490px]"
                     }`}>
                     <li

@@ -10,7 +10,7 @@ const options = [
     { value: "shabby", label: "has visible signs of use" },
 ];
 
-function AddBook() {
+function AddBook({port}) {
     const [input, setInput] = useState("");
     const [books, setBooks] = useState([]);
     const [searchKey, setSearchKey] = useState();
@@ -73,7 +73,7 @@ function AddBook() {
             image: data.imageLinks?.smallThumbnail || "none"
 		};
 		console.log(book)
-		const response = await fetch("http://localhost:4000/bookbandits/user/create_book", {
+		const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/user/create_book', {
 			method: "POST",
 			body: JSON.stringify(book),
 			headers: {

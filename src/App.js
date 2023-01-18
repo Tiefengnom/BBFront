@@ -11,7 +11,8 @@ import Catalogue from "./pages/Catalogue";
 import SingleBook from "./components/SingleBook";
 import SignUp from "./components/SignUp";
 import Logout from "./components/Logout";
-import "react-datetime/css/react-datetime.css"
+import "react-datetime/css/react-datetime.css";
+// import { GlobalProvider } from "./context/globalContext";
 
 function App() {
 	
@@ -33,38 +34,41 @@ function App() {
 
 // 	fetchBooks()
 // }, [])
+	const port = process.env.PORT 
+	// || 'http://localhost:4000/bookbandits';
 
 	return (
-		<div className='App flex justify-center w-full bg-cover bg-no-repeat h-auto pb-12 px-4 pages m-[0px] text-gray-700 text-center pt-[100px] '>
+		<div className='App flex justify-center w-full bg-cover bg-no-repeat h-auto pb-12 pages m-0 text-gray-700 text-center pt-[100px] '>
 			<BrowserRouter>
-				<Navbar />
+				{/* <GlobalProvider> */}
+					<Navbar />
+					<div className='pages m-[0px] h-screen text-center'>
+						<Routes>
+							<Route index element={<Home port={port}/>} />
 
-				<div className='pages m-[0px] h-screen text-center'>
-					<Routes>
-						<Route index element={<Home />} />
-
-						<Route path='/:id' element={<AccountLanding />}>
-							<Route path='create_book' element={<AddBook />} />
+							<Route path='/:id' element={<AccountLanding port={port}/>}>
+								<Route path='create_book' element={<AddBook port={port}/>} />
+								
+								<Route path='user_collection' element={<MyBooks port={port}/>} />
+							</Route>
+							<Route path='catalogue/:id' element={<SingleBook port={port}/>} />
+							<Route path='catalogue' element={<Catalogue port={port} />}>
+								
+							</Route>
+							<Route
+								path="/logout"  element={<Logout port={port} />}
+							/>
 							
-							<Route path='user_collection' element={<MyBooks />} />
-						</Route>
-						<Route path='catalogue/:id' element={<SingleBook />} />
-						<Route path='catalogue' element={<Catalogue />}>
 							
-						</Route>
-						<Route
-							path="/logout"  element={<Logout />}
-						/>
-						
-						
-						<Route
-							path="/login"		element={<Login />}
-						/>
-						<Route
-							path="/signup" 		element={<SignUp />}
-						/>
-					</Routes>
-				</div>
+							<Route
+								path="/login"		element={<Login port={port} />}
+							/>
+							<Route
+								path="/signup" 		element={<SignUp port={port} />}
+							/>
+						</Routes>
+					</div>
+				{/* </GlobalProvider> */}
 			</BrowserRouter>
 		</div>
 	);

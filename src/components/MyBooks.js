@@ -4,7 +4,7 @@ import DeleteBook from "./DeleteBook";
 import Book from "../assets/book-open.png";
 import { useNavigate } from "react-router-dom";
 
-function MyBooks() {
+function MyBooks({port}) {
     const navigate = useNavigate();
 
     const [books, setBooks] = useState(null);
@@ -13,7 +13,7 @@ function MyBooks() {
 
     useEffect(() => {
         const fetchBooks = async () => {
-            const response = await fetch(`http://localhost:4000/bookbandits/${user._id}/user_collection`);
+            const response = await fetch(`https://sore-visor-dove.cyclic.app/bookbandits/${user._id}/user_collection`);
             const json = await response.json();
             console.log(json);
 

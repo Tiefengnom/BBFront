@@ -2,7 +2,7 @@ import { useUserContext } from "../hooks/useUserContext";
 import { useNavigate } from "react-router";
 
 
-function Logout () {
+function Logout ({port}) {
 const {user, setUser} = useUserContext()
 const navigate = useNavigate();
 

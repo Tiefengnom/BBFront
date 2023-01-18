@@ -6,7 +6,7 @@ import { useUserContext } from "../hooks/useUserContext";
 import BorrowedByMe from "../components/BorrowedByMe";
 import BorrowedFromMe from "../components/BorrowedFromMe";
 
-const AccountLanding = () => {
+const AccountLanding = ({port}) => {
     const { user } = useUserContext();
     // const { bBooks, setbBooks } = useUBContext();
     const navigate = useNavigate();
@@ -21,20 +21,20 @@ const AccountLanding = () => {
 
     console.log(borrowedByMe);
     console.log(borrowedFromMe);
-    // eslint-disable-next-line
+   
     const lentBook = async (b) => {
-         await fetch("http://localhost:4000/bookbandits/lentbook", {
+       await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
             method: "POST",
             body: JSON.stringify({ bid: b }),
             headers: {
                 "Content-Type": "application/json",
             },
-        });
+        })};
    
     }
 
     const nolentBook = async (bookid,borrower) => {
-        await fetch("http://localhost:4000/bookbandits/deniedbook", {
+        await fetch('https://sore-visor-dove.cyclic.app/bookbandits/deniedbook', {
             method: "POST",
             body: JSON.stringify({borrowed: false, bid : bookid, user_id : user._id,borrower: borrower }),
             headers: {
