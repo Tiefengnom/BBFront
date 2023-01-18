@@ -19,7 +19,7 @@ const Login = () => {
 
         const userdata = { email,password};
 
-        const response = await fetch("https://sore-visor-dove.cyclic.app/bookbandits/Login", {
+        const response = await fetch("https://sore-visor-dove.cyclic.app/bookbandits/login", {
             method: "POST",
             body: JSON.stringify(userdata),
             headers: {
@@ -44,7 +44,7 @@ const Login = () => {
             console.log("Welcome, youre signed in");
         } else {
             setError(json.error);
-            console.log(error)
+            console.log(json.error)
         }
     };
 
