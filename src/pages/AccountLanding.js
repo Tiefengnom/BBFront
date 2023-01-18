@@ -23,7 +23,7 @@ const AccountLanding = ({port}) => {
     console.log(borrowedFromMe);
    
     const lentBook = async (b) => {
-      const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
+       await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
             method: "POST",
             body: JSON.stringify({ bid: b,user_id: user._id }),
             headers: {
@@ -32,10 +32,7 @@ const AccountLanding = ({port}) => {
                 
             },
         })
-        const json = await response.json();
-        console.log("json user", json);
-        console.log(b)
-        console.log(b)
+        
     };
    
     
@@ -58,6 +55,7 @@ const AccountLanding = ({port}) => {
           
 
                     <>
+                    <div className="font-bold text-2xl">Welcome, {user.first_name}!</div>
                         <button
                             onClick={() => navigate(`/${user._id}/user_collection`)}
                         className='mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>

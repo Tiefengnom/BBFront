@@ -11,7 +11,7 @@ function SingleBook({port}) {
     const { user } = useUserContext();
     const navigate = useNavigate();
     const { id } = useParams();
-    const [showResults,setShowResults] = useState("")
+    
 
     useEffect(() => {
         fetch(`https://sore-visor-dove.cyclic.app/bookbandits/collection/${id}`)
@@ -33,16 +33,9 @@ function SingleBook({port}) {
     };
 
 
-    const bClick = () => setShowResults(false)
+    
         
-    const Results = () => (
-        <div id="results" >
-            Congratulations, a request to borrow this book was sent to the owner
-        </div>
-
-
-
-    )
+   
 
 
 
