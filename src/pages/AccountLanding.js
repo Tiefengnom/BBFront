@@ -23,15 +23,17 @@ const AccountLanding = ({port}) => {
     console.log(borrowedFromMe);
    
     const lentBook = async (b) => {
-       await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
+      const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
             method: "POST",
-            body: JSON.stringify({ bid: b }),
+            body: JSON.stringify({ bid: b,user_id: user._id }),
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
                 
             },
         })
+        const json = await response.json();
+        console.log("json user", json);
         console.log(b)
         console.log(b)
     };
