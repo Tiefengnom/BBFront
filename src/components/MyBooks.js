@@ -13,7 +13,7 @@ function MyBooks({port}) {
 
     useEffect(() => {
         const fetchBooks = async () => {
-            const response = await fetch(`${port}/${user._id}/user_collection`);
+            const response = await fetch(`https://sore-visor-dove.cyclic.app/bookbandits/${user._id}/user_collection`);
             const json = await response.json();
             console.log(json);
 

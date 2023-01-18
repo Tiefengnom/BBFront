@@ -73,7 +73,7 @@ function AddBook({port}) {
             image: data.imageLinks?.smallThumbnail || "none"
 		};
 		console.log(book)
-		const response = await fetch(`${port}/user/create_book`, {
+		const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/user/create_book', {
 			method: "POST",
 			body: JSON.stringify(book),
 			headers: {

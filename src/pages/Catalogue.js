@@ -59,7 +59,7 @@ function Catalogue({port}) {
     // "http://localhost:4000/bookbandits/collection"
 
     const fetchBooks = async () => {
-        const response = await fetch(`${port}/collection`);
+        const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/collection');
         const json = await response.json();
 
         if (response.ok) {
@@ -81,7 +81,7 @@ function Catalogue({port}) {
             return;
         }
 
-        const response = await fetch(`${port}/collection`, {
+        const response = await fetch(`https://sore-visor-dove.cyclic.app/bookbandits/collection`, {
             method: "POST",
             body: JSON.stringify({ query: search, language: language, genre: genre }),
             headers: {

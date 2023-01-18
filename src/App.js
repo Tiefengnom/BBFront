@@ -34,7 +34,8 @@ function App() {
 
 // 	fetchBooks()
 // }, [])
-	const port = process.env.PORT || 'http://localhost:4000/bookbandits';
+	const port = process.env.PORT 
+	// || 'http://localhost:4000/bookbandits';
 
 	return (
 		<div className='App flex justify-center w-full bg-cover bg-no-repeat h-auto pb-12 pages m-0 text-gray-700 text-center pt-[100px] '>
