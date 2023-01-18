@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import Book from "../assets/book-open.png";
 
 function BorrowedByMe({books}) {
     const navigate = useNavigate();
@@ -9,9 +10,15 @@ function BorrowedByMe({books}) {
             {books.map((b) => (
                 <div key={b._id} className="bg-white w-full p-5 shadow-lg rounded border-b-[4px] border-transparent hover:border-pink-500 text-gray-700 text-center mt-4">
                     <div>{b.title}</div>
-                   
-                    <div>Borrowed until {b.btime.toLocaleString("ia", { dateStyle: "short" })}</div>
-                    <div>Owner: {b.owner}</div>{" "}
+                    <img
+                                            onClick={()=>navigate(`/catalogue/${b._id}`)}
+                                            src={b.image || b.image === "none" ? b.image : Book}
+                                            alt='book cover'
+                                            className='h-[200px] m-auto mb-4'
+                                        />
+                    <div>Borrowed until {b.btime.slice(8, 10)}.{b.btime.slice(5, 7)}.
+                    {b.btime.slice(0, 4)}</div>
+                   {" "}
                     <button
                         onClick={() => navigate(`/catalogue/${b.book_id}`)}
                         className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
