@@ -21,7 +21,7 @@ const AccountLanding = ({port}) => {
 
     console.log(borrowedByMe);
     console.log(borrowedFromMe);
-    // eslint-disable-next-line
+   
     const lentBook = async (b) => {
        await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
             method: "POST",
@@ -29,7 +29,7 @@ const AccountLanding = ({port}) => {
             headers: {
                 "Content-Type": "application/json",
             },
-        });
+        })};
    
 
     const nolentBook = async (bookid,borrower) => {
@@ -117,6 +117,6 @@ const AccountLanding = ({port}) => {
             )}
         </div>
     );
-}};
+};
 
 export default AccountLanding;
