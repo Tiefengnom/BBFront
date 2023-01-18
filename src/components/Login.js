@@ -45,7 +45,7 @@ const Login = ({port}) => {
             console.log("Welcome, youre signed in");
         } else {
             setError(json.error);
-            console.log(json.error)
+            console.log(error)
         }
     };
 
