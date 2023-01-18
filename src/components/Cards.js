@@ -1,5 +1,4 @@
 import React from "react";
-import logo from '../assets/logo-orange.png'
 import { useNavigate } from "react-router-dom";
 import Scan from '../assets/Laptop.png'
 import Browse from '../assets/browse.png'

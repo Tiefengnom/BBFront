@@ -8,7 +8,7 @@ const DeleteBook = ({ id, didDelete, setDidDelete, port}) => {
             return;
         }
 
-        const url = 'https://sore-visor-dove.cyclic.app/bookbandits/user/user_collection/${id}';
+        const url = `https://sore-visor-dove.cyclic.app/bookbandits/user/user_collection/${id}`;
 
         const response = await fetch(url, {
             method: "DELETE",
