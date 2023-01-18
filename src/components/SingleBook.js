@@ -8,7 +8,7 @@ import Book from "../assets/book-open.png";
 function SingleBook() {
     const [fetchedBook, setFetchedBook] = useState();
     const [btime, setBtime] = useState();
-    const { user, setUser } = useUserContext();
+    const { user } = useUserContext();
     const navigate = useNavigate();
     const { id } = useParams();
 

@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 import { useUserContext } from "../hooks/useUserContext";
-import { BorrowContext } from "../context/Borrowcontext";
 import AccountLanding from "../pages/AccountLanding";
-import { useUBContext } from "../hooks/useUBContext";
 
 const Login = () => {
     const [first_name, setfname] = useState("");
@@ -12,7 +10,7 @@ const Login = () => {
     const [password,setPassword] = useState("")
     const [error, setError] = useState(null);
     const { user, setUser } = useUserContext();
-    const {bBooks, setbBooks} = useUBContext()
+   
     
 
     const handleSubmit = async (e) => {
@@ -31,7 +29,6 @@ const Login = () => {
         const json = await response.json();
         console.log("json user", json);
 
-        const id = json.user._id;
         setUser(json.user);
         /*if (!json.bbooks === []) {setbBooks((prev) => [...prev  , ...json.bbooks]) }*/
 

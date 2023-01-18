@@ -3,14 +3,12 @@ import { useUserContext } from "../hooks/useUserContext";
 import DeleteBook from "./DeleteBook";
 import Book from "../assets/book-open.png";
 import { useNavigate } from "react-router-dom";
-import { useUBContext } from "../hooks/useUBContext";
 
 function MyBooks() {
     const navigate = useNavigate();
 
     const [books, setBooks] = useState(null);
     const { user } = useUserContext();
-    const { bBooks, setbBooks } = useUBContext();
     const [didDelete, setDidDelete] = useState(false);
 
     useEffect(() => {
