@@ -23,13 +23,20 @@ const AccountLanding = ({port}) => {
     console.log(borrowedFromMe);
    
     const lentBook = async (b) => {
-       await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
+      const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
             method: "POST",
-            body: JSON.stringify({ bid: b }),
+            body: JSON.stringify({ bid: b,user_id: user._id }),
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
+                
             },
-        })};
+        })
+        const json = await response.json();
+        console.log("json user", json);
+        console.log(b)
+        console.log(b)
+    };
    
     
 
@@ -38,50 +45,19 @@ const AccountLanding = ({port}) => {
             method: "POST",
             body: JSON.stringify({borrowed: false, bid : bookid, user_id : user._id,borrower: borrower }),
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
+                
             },
         });
+        console.log(bookid)
     };
 
     return (
         <div className=' header w-full h-full  pt-12 pb-12 px-4  mt-10 '>
-            {user && (
-                <>
-                    {" "}
-                    <button onClick={ console.log(user)}>click</button>
-                    <div>
-                        <p>Books from you which are currently borrowed or aksed to be burrowed</p>
-                        {borrowedFromMe.map((b) => (
-                            <div key={b._id}>
-                            <div>{b.title}</div>
-                            {!b.pending && b.borrowed ? <><button >There is Interest in {b.title}!Do you want to rent this book to {b.borrower}? </button>
-                            <button onClick={lentBook(b._id)}>Yes</button><button onClick={nolentBook(b._id,b.borrower)}>No</button>
-                            </> :
-                            <><div>Rented until {b.btime}</div>
-                           {b.borrowerfname ? <div>{b.borrowerfname}</div> : <div>Rented by {b.borrower}</div> }
-                                                    {" "}
-                                                    <button  onClick={() => navigate(`/catalogue/${b.book_id}`)} className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight uppercase rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
-                                                        More Info
-                                                    </button></>}
-                                                
-                            </div>
-                        ))}
+          
 
-                    </div>
-                    <p>Books which you currently burrowed from others</p>
-                    {borrowedByMe.map((b) => (
-                            <div key={b._id}>
-                            <div>{b.title}</div>
-                            <div>Rented until {b.btime}</div>
-                            <div>Owner: {b.owner}</div>
-                                                    {" "}
-                                                    <button  onClick={() => navigate(`/catalogue/${b.book_id}`)} className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight uppercase rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
-                                                        More Info
-                                                    </button>
-                                                
-                            </div>
-                        ))}
-
+                    <>
                         <button
                             onClick={() => navigate(`/${user._id}/user_collection`)}
                         className='mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
@@ -112,10 +88,10 @@ const AccountLanding = ({port}) => {
                         <BorrowedByMe books={borrowedByMe} approve={lentBook} reject={nolentBook} />{" "}
                     </div>
                     <div className={!enabledFrom && "hidden"}>
-                        <BorrowedFromMe books={borrowedFromMe} />{" "}
+                        <BorrowedFromMe books={borrowedFromMe} approve={lentBook} reject={nolentBook}  />{" "}
                     </div>
                 </>
-            )}
+            
         </div>
     );
 };
