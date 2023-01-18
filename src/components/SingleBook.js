@@ -53,7 +53,7 @@ function SingleBook({port}) {
         <div className=' mb-2 bg-white p-3 shadow-lg rounded transition-colors border-b-2 border-transparent md:w-5/6 lg:max-w-screen-3xl m-auto'>
         <div className="flex flex-wrap md:flex-nowrap p-8"  > 
             <div className="w-96 flex flex-col justify-start text-left  bg-white-300 p-8 shadow-lg   rounded"> 
-            <img src={!fetchedBook.image ? Book : fetchedBook.image} alt='book cover' className="mb-8 max-w-[150px]"/>
+            <img src={fetchedBook.image==='none' ? Book : fetchedBook.image} alt='book cover' className="mb-8 max-w-[150px]"/>
             <strong> {fetchedBook.title} </strong>
           
             <p>{fetchedBook.author}</p>
@@ -87,7 +87,7 @@ function SingleBook({port}) {
                     <Datetime
                         input={false}
                         onChange={(e) => {
-                            setBtime(e._d);
+                            if (fetchedBook.owner._id !== user._id) {setBtime(e._d)};
                         }}
                     />
                 ) : (
