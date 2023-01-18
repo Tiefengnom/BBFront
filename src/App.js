@@ -35,7 +35,7 @@ function App() {
 // }, [])
 
 	return (
-		<div className='App flex justify-center w-full bg-cover bg-no-repeat h-auto pb-12 px-4 pages m-[0px] text-gray-700 text-center pt-[100px] '>
+		<div className='App flex justify-center w-full bg-cover bg-no-repeat h-auto pb-12 pages m-0 text-gray-700 text-center pt-[100px] '>
 			<BrowserRouter>
 				<Navbar />
 

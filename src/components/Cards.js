@@ -1,6 +1,9 @@
 import React from "react";
 import logo from '../assets/logo-orange.png'
 import { useNavigate } from "react-router-dom";
+import Scan from '../assets/Laptop.png'
+import Browse from '../assets/browse.png'
+import Register from '../assets/register.png'
 
 function Cards() {
 
@@ -13,8 +16,8 @@ function Cards() {
                     <div className=' h-[350px] rounded-lg shadow-lg  hover:hover:bg-gradient-to-br from-yellow-200 to-pink-200 p-4 w-[300px]'  onClick={() => navigate("/signup")}>
                         <a href='#!' className='flex justify-center'>
                             <img
-                                className='rounded-full h-[160px] w-[200px] m-0'
-                                src={logo}
+                                className='rounded-full  w-[300px] m-0'
+                                src={Register}
                                 alt=''
                             />
                         </a>
@@ -34,8 +37,8 @@ function Cards() {
                     <div className='h-[350px]  rounded-lg shadow-lg p-4  hover:hover:bg-gradient-to-br from-yellow-200 to-pink-200 w-[300px]' onClick={() => navigate("/signup")}>
                         <a href='#!' className='flex justify-center'>
                             <img
-                              className='rounded-full h-[160px] w-[200px] m-0'
-                                src={logo}
+                              className='rounded-full  w-[300px] m-0'
+                                src={Scan}
                                 alt=''
                             />
                         </a>
@@ -55,8 +58,8 @@ function Cards() {
                     <div className='h-[350px]  rounded-lg shadow-lg hover:bg-gradient-to-br from-yellow-200 to-pink-200 p-4 w-[300px]' onClick={() => navigate("/catalogue")}>
                         <a href='#!' className='flex justify-center'>
                             <img
-                              className='rounded-full h-[160px] w-[200px] m-0'
-                                src={logo}
+                              className='rounded-full w-[300px] m-0'
+                                src={Browse}
                                 alt=''
                             />
                         </a>
