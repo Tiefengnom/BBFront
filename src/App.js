@@ -43,24 +43,24 @@ function App() {
 					<Navbar />
 					<div className='pages m-[0px] h-screen text-center'>
 						<Routes>
-							<Route index element={<Home />} />
+							<Route index element={<Home port={port}/>} />
 
-							<Route path='/:id' element={<AccountLanding />}>
-								<Route path='create_book' element={<AddBook />} />
+							<Route path='/:id' element={<AccountLanding port={port}/>}>
+								<Route path='create_book' element={<AddBook port={port}/>} />
 								
-								<Route path='user_collection' element={<MyBooks />} />
+								<Route path='user_collection' element={<MyBooks port={port}/>} />
 							</Route>
-							<Route path='catalogue/:id' element={<SingleBook />} />
+							<Route path='catalogue/:id' element={<SingleBook port={port}/>} />
 							<Route path='catalogue' element={<Catalogue port={port} />}>
 								
 							</Route>
 							<Route
-								path="/logout"  element={<Logout />}
+								path="/logout"  element={<Logout port={port} />}
 							/>
 							
 							
 							<Route
-								path="/login"		element={<Login />}
+								path="/login"		element={<Login port={port} />}
 							/>
 							<Route
 								path="/signup" 		element={<SignUp port={port} />}

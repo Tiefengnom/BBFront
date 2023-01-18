@@ -5,7 +5,7 @@ import Datetime from "react-datetime";
 import { useUserContext } from "../hooks/useUserContext";
 import Book from "../assets/book-open.png";
 
-function SingleBook() {
+function SingleBook({port}) {
     const [fetchedBook, setFetchedBook] = useState();
     const [btime, setBtime] = useState();
     const { user } = useUserContext();
@@ -13,7 +13,7 @@ function SingleBook() {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:4000/bookbandits/collection/${id}`)
+        fetch(`${port}/collection/${id}`)
             .then((res) => res.json())
             .then((finalResult) => setFetchedBook(finalResult));
         // eslint-disable-next-line

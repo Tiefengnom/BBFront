@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useUserContext } from "../hooks/useUserContext";
 import AccountLanding from "../pages/AccountLanding";
 
-const Login = () => {
+const Login = ({port}) => {
     // const [first_name, setfname] = useState("");
     // const [last_name, setlname] = useState("");
     const [email,setEmail] = useState("")
@@ -20,7 +20,7 @@ const Login = () => {
 
         const userdata = { email,password};
 
-        const response = await fetch("http://localhost:4000/bookbandits/Login", {
+        const response = await fetch(`${port}/Login`, {
             method: "POST",
             body: JSON.stringify(userdata),
             headers: {

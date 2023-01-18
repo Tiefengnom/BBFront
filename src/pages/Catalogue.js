@@ -81,7 +81,7 @@ function Catalogue({port}) {
             return;
         }
 
-        const response = await fetch("http://localhost:4000/bookbandits/collection", {
+        const response = await fetch(`${port}/collection`, {
             method: "POST",
             body: JSON.stringify({ query: search, language: language, genre: genre }),
             headers: {

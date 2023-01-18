@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const DeleteBook = ({ id, didDelete, setDidDelete }) => {
+const DeleteBook = ({ id, didDelete, setDidDelete, port}) => {
     const [error, setError] = useState(null);
 
     const handleDelete = async () => {
@@ -8,7 +8,7 @@ const DeleteBook = ({ id, didDelete, setDidDelete }) => {
             return;
         }
 
-        const url = `http://localhost:4000/bookbandits/user/user_collection/${id}`;
+        const url = `${port}/user/user_collection/${id}`;
 
         const response = await fetch(url, {
             method: "DELETE",
