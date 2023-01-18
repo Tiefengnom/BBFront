@@ -4,8 +4,8 @@ import { useUserContext } from "../hooks/useUserContext";
 import AccountLanding from "../pages/AccountLanding";
 
 const Login = () => {
-    const [first_name, setfname] = useState("");
-    const [last_name, setlname] = useState("");
+    // const [first_name, setfname] = useState("");
+    // const [last_name, setlname] = useState("");
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [error, setError] = useState(null);
@@ -34,8 +34,8 @@ const Login = () => {
         /*if (!json.bbooks === []) {setbBooks((prev) => [...prev  , ...json.bbooks]) }*/
 
         if (response.ok) {
-            setfname("");
-            setlname("");
+            // setfname("");
+            // setlname("");
             setPassword("")
             setError(null);
           
