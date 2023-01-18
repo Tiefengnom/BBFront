@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useUserContext } from "../hooks/useUserContext";
 import AccountLanding from "../pages/AccountLanding";
-//
 
-const SignUp = () => {
+
+const SignUp = ({port}) => {
     const [first_name, setfname] = useState("");
     const [last_name, setlname] = useState("");
     const [Adress, setAdress] = useState("");
@@ -18,8 +18,9 @@ const SignUp = () => {
         e.preventDefault();
 
         const userdata = { first_name, last_name, email, Adress, PLZ, mail, password };
+        // "http://localhost:4000/bookbandits/signup"
 
-        const response = await fetch("http://localhost:4000/bookbandits/signup", {
+        const response = await fetch(`${port}/signup`, {
             method: "POST",
             body: JSON.stringify(userdata),
             headers: {
@@ -44,9 +45,10 @@ const SignUp = () => {
             console.log("Welcome, you are signed in");
         }
     };
-
+    console.log(port);
     return (
         <div className='Signin mt-20 h-full text-left p-4'>
+            {console.log(1)}
             {!user ? (
                 <form className='signin' onSubmit={handleSubmit}>
                     <label>First Name</label>

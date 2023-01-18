@@ -11,7 +11,8 @@ const Login = () => {
     const [error, setError] = useState(null);
     const { user, setUser } = useUserContext();
    
-    
+    //refactor: make an object with the entire user schema in the context/state
+    //use only one context for all info 
 
     const handleSubmit = async (e) => {
         e.preventDefault();

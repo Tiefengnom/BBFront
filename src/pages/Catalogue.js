@@ -32,7 +32,7 @@ const genres = [
     { value: "adventure", label: "adventure" },
 ];
 
-function Catalogue() {
+function Catalogue({port}) {
     const navigate = useNavigate();
     const [books, setBooks] = useState(null);
     const [search, setSearch] = useState(null);
@@ -56,8 +56,10 @@ function Catalogue() {
     const [enabledFrom, setEnabledFrom] = useState();
     const [enabledBy, setEnabledBy] = useState();
 
+    // "http://localhost:4000/bookbandits/collection"
+
     const fetchBooks = async () => {
-        const response = await fetch("http://localhost:4000/bookbandits/collection");
+        const response = await fetch(`${port}/collection`);
         const json = await response.json();
 
         if (response.ok) {
