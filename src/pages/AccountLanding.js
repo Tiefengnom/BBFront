@@ -27,9 +27,14 @@ const AccountLanding = ({port}) => {
             method: "POST",
             body: JSON.stringify({ bid: b }),
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
+                
             },
-        })};
+        })
+        console.log(b)
+        console.log(b)
+    };
    
     
 
@@ -38,9 +43,12 @@ const AccountLanding = ({port}) => {
             method: "POST",
             body: JSON.stringify({borrowed: false, bid : bookid, user_id : user._id,borrower: borrower }),
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
+                
             },
         });
+        console.log(bookid)
     };
 
     return (
@@ -78,7 +86,7 @@ const AccountLanding = ({port}) => {
                         <BorrowedByMe books={borrowedByMe} approve={lentBook} reject={nolentBook} />{" "}
                     </div>
                     <div className={!enabledFrom && "hidden"}>
-                        <BorrowedFromMe books={borrowedFromMe} />{" "}
+                        <BorrowedFromMe books={borrowedFromMe} approve={lentBook} reject={nolentBook}  />{" "}
                     </div>
                 </>
             

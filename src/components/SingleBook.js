@@ -61,7 +61,7 @@ function SingleBook({port}) {
             <p>Language: {fetchedBook.language}</p> 
             <p>Available now? </p> {fetchedBook.borrowed ? <span>No</span> : <span>Yes</span> }</div> 
             <div className="max-w-xl p-4 md:pl-10">
-            <p className="text-left mt-8 md:mt-0 border-b-2 border-pink-600 pb-8">{fetchedBook.synopsis}</p> 
+            {fetchedBook.synopsis === "none" ? <div>No synopsis available</div> : <p className="text-left mt-8 md:mt-0 border-b-2 border-pink-600 pb-8"> {fetchedBook.synopsis} </p>} 
             {/* <p>{fetchedBook.owner}</p> */}
            
           
