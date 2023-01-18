@@ -20,7 +20,7 @@ const SignUp = ({port}) => {
         const userdata = { first_name, last_name, email, Adress, PLZ, mail, password };
         // "http://localhost:4000/bookbandits/signup"
 
-        const response = await fetch(`${port}/signup`, {
+        const response = await fetch('https://sore-visor-dove.cyclic.app/bookbandits/signup', {
             method: "POST",
             body: JSON.stringify(userdata),
             headers: {

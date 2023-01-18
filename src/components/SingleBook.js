@@ -13,7 +13,7 @@ function SingleBook({port}) {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`${port}/collection/${id}`)
+        fetch(`https://sore-visor-dove.cyclic.app/bookbandits/collection/${id}`)
             .then((res) => res.json())
             .then((finalResult) => setFetchedBook(finalResult));
         // eslint-disable-next-line

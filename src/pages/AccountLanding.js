@@ -23,7 +23,7 @@ const AccountLanding = ({port}) => {
     console.log(borrowedFromMe);
     // eslint-disable-next-line
     const lentBook = async (b) => {
-       await fetch(`${port}/lentbook`, {
+       await fetch('https://sore-visor-dove.cyclic.app/bookbandits/lentbook', {
             method: "POST",
             body: JSON.stringify({ bid: b }),
             headers: {
@@ -33,7 +33,7 @@ const AccountLanding = ({port}) => {
    
 
     const nolentBook = async (bookid,borrower) => {
-        await fetch(`${port}/deniedbook`, {
+        await fetch('https://sore-visor-dove.cyclic.app/bookbandits/deniedbook', {
             method: "POST",
             body: JSON.stringify({borrowed: false, bid : bookid, user_id : user._id,borrower: borrower }),
             headers: {
