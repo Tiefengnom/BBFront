@@ -11,7 +11,7 @@ function BorrowedFromMe({books, approve, reject}) {
                 <div key={b._id} className="bg-white-600 w-full p-5 shadow-lg rounded transition-colors border-b-[4px] border-transparent hover:border-pink-500 text-gray-700 text-center mt-4">
                     <div>{b.title}</div>
                     <img
-                                            onClick={()=>navigate(`/catalogue/${b._id}`)}
+                                            
                                             src={b.image || b.image === "none" ? b.image : Book}
                                             alt='book cover'
                                             className='h-[200px] m-auto mb-4'
@@ -19,10 +19,10 @@ function BorrowedFromMe({books, approve, reject}) {
                     {!b.pending && b.borrowed ? (
                         <>
                             <button>
-                                There is Interest in {b.title}!Do you want to rent this book to {b.borrower}?{" "}
+                                There is Interest in {b.title}!Do you want to rent this book to {b.borrowerfname} {b.borrowerlname}?{" "}
                             </button>
-                            <button onClick={()=>approve(b._id)}>Yes</button>
-                            <button onClick={()=>reject(b._id)}>No</button>
+                            <button onClick={()=>approve(b.book_id)}>Yes</button>
+                            <button onClick={()=>reject(b.book_id,b.borrower)}>No</button>
                         </>
                     ) : (
                         <>
