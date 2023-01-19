@@ -34,14 +34,14 @@ const Navbar = () => {
                     }`}>
                     <li
                         onClick={() => navigate("/")}
-                        className='text-center mx-auto px-4 text-gray-400 border-b-2 border-transparent hover:border-pink-500 w-fit cursor-pointer'>
+                        className='text-center mx-auto px-4 text-gray-400 border-b-2 border-transparent hover:border-orange-500 w-fit cursor-pointer'>
                         {" "}
                         Home
                     </li>
 
                     <li
                         onClick={() => navigate("/catalogue")}
-                        className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-pink-500 cursor-pointer'>
+                        className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-orange-500 cursor-pointer'>
                         {" "}
                         Catalogue
                     </li>
@@ -51,7 +51,7 @@ const Navbar = () => {
                     ) : (
                         <li
                             onClick={() => navigate(`/${user._id}`)}
-                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-pink-500 cursor-pointer'>
+                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-orange-500 cursor-pointer'>
                             Account
                         </li>
                     )}
@@ -60,7 +60,7 @@ const Navbar = () => {
                     ) : (
                         <li
                             onClick={() => navigate(`/${user._id}/create_book`)}
-                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-pink-500 cursor-pointer'>
+                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-orange-500 cursor-pointer'>
                             Add Book
                         </li>
                     )}
@@ -69,7 +69,7 @@ const Navbar = () => {
                     ) : (
                         <li
                             onClick={() => navigate(`/${user._id}/user_collection`)}
-                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-pink-500 cursor-pointer'>
+                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-orange-500 cursor-pointer'>
                             My Books
                         </li>
                     )}
@@ -77,13 +77,13 @@ const Navbar = () => {
                     {user ? (
                         <li
                             onClick={() => navigate("/logout")}
-                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-pink-500 cursor-pointer'>
+                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-orange-500 cursor-pointer'>
                             Logout
                         </li>
                     ) : (
                         <li
                             onClick={() => navigate("/login")}
-                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-pink-500 cursor-pointer'>
+                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-orange-500 cursor-pointer'>
                             Login
                         </li>
                     )}
@@ -92,12 +92,12 @@ const Navbar = () => {
                     ) : (
                         <li
                             onClick={() => navigate("/signup")}
-                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-pink-500 cursor-pointer'>
+                            className='text-center mx-auto px-4 w-fit text-gray-400 border-b-2 border-transparent hover:border-orange-500 cursor-pointer'>
                             Sign Up
                         </li>
                     )}
                 </ul>
-                {/* <button onClick={()=>navigate(-1)} className="text-center text-gray-400 group-hover:text-pink-500 border-b-2 border-transparent hover:border-pink-500 hidden md-flex">Back</button> */}
+                {/* <button onClick={()=>navigate(-1)} className="text-center text-gray-400 group-hover:text-orange-500 border-b-2 border-transparent hover:border-orange-500 hidden md-flex">Back</button> */}
             </div>
         </header>
     );
