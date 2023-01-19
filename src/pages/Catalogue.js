@@ -53,7 +53,7 @@ function Catalogue({port}) {
     //     { value: "local", label: "locally available" },
     // ];
 
-    const [enabledFrom, setEnabledFrom] = useState();
+    // const [enabledFrom, setEnabledFrom] = useState();
     const [enabledBy, setEnabledBy] = useState();
 
     // "http://localhost:4000/bookbandits/collection"
@@ -83,7 +83,7 @@ function Catalogue({port}) {
 
         const response = await fetch(`https://sore-visor-dove.cyclic.app/bookbandits/collection`, {
             method: "POST",
-            body: JSON.stringify({ query: search, language: language, genre: genre }),
+            body: JSON.stringify({ query: search, language: language, genre: genre, available: enabledBy}),
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
@@ -119,7 +119,7 @@ function Catalogue({port}) {
                         </div>
                         <div className='flex flex-col  justify-start md:flex-row align-middle md:justify-center mt-[20px] ml-4 text-left'>
                             <Toggle toggle={enabledBy} setToggle={setEnabledBy} label={"Available now"} to />
-                            <Toggle toggle={enabledFrom} setToggle={setEnabledFrom} label={"Available via mail"} />
+                            {/* <Toggle toggle={enabledFrom} setToggle={setEnabledFrom} label={"Available via mail"} /> */}
                         </div>
 
                        
