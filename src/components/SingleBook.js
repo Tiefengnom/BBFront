@@ -11,8 +11,7 @@ function SingleBook({port}) {
     const { user } = useUserContext();
     const navigate = useNavigate();
     const { id } = useParams();
-    const [hidden,setHidden] = useState(true)
-    const [unhidden,setUnhidden] = useState(true)
+    
     
     
 
