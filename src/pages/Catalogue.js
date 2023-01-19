@@ -129,12 +129,12 @@ function Catalogue({port}) {
                                 <input
                                     onChange={(e) => setSearch(e.target.value)}
                                     placeholder='Search for key word...'
-                                    className='bg-white rounded-full border-2 border-pink-500 px-3 py-1 leading-none text-sm transition-colors placeholder-gray placeholder-opacity-80 w-[270px] m-0 mr-4'
+                                    className='bg-white rounded-full border-2 border-orange-500 px-3 py-1 leading-none text-sm transition-colors placeholder-gray placeholder-opacity-80 w-[270px] m-0 mr-4'
                                 />
                             </span>
                             <button
                                 type='submit'
-                                className=' ml-4 flex  bg-white w-fit bg-opacity-90 px-10 py-2 border-2 border-white-500  font-medium text-xs leading-tight rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer mb-6'>
+                                className=' ml-4 flex  bg-white w-fit bg-opacity-90 px-10 py-2 border-2 border-white-500  font-medium text-xs leading-tight rounded-full hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer mb-6'>
                                 <p className='mr-1 p-0 text-md'>Apply Filters</p>
                                 <svg
                                     aria-hidden='true'
@@ -146,7 +146,7 @@ function Catalogue({port}) {
                                     xmlns='http://www.w3.org/2000/svg'
                                     viewBox='0 0 512 512'>
                                     <path
-                                        fill='pink'
+                                        fill='orange'
                                         d='M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z'></path>
                                 </svg>
                             </button>
@@ -177,7 +177,7 @@ function Catalogue({port}) {
                                 searchedBooks.map((book) => (
                                     <div
                                         key={book._id}
-                                        className='book-card p-4 m-4 bg-white  shadow-lg rounded  transition-colors border-b-[4px] border-transparent hover:border-pink-500 text-gray-700 w-72 text-center'>
+                                        className='book-card p-4 m-4 bg-white  shadow-lg rounded  transition-colors border-b-[4px] border-transparent hover:border-orange-500 text-gray-700 w-72 text-center'>
                                         <img
                                             onClick={()=>navigate(`/catalogue/${book._id}`)}
                                             src={book.image || book.image === "none" ? book.image : Book}
@@ -194,10 +194,10 @@ function Catalogue({port}) {
 
                                         <div>
                                             <p>Available: {book.borrowed ? <span>No</span> : <span>Yes</span>}</p>
-                                            <p className='hover:text-pink-600'>
+                                            <p className='hover:text-orange-400 '>
                                                 <button
                                                     onClick={()=>navigate(`/catalogue/${book._id}`)}
-                                                    className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
+                                                    className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-orange-400    focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
                                                     More info
                                                 </button>
                                             </p>
@@ -211,7 +211,7 @@ function Catalogue({port}) {
                                 books.map((book) => (
                                     <div
                                         key={book._id}
-                                        className='book-card p-4 m-4 bg-white  shadow-lg rounded  transition-colors border-b-[4px] border-transparent hover:border-pink-500 text-gray-700 w-72 text-center'>
+                                        className='book-card p-4 m-4 bg-white  shadow-lg rounded  transition-colors border-b-[4px] border-transparent hover:border-orange-500 text-gray-700 w-72 text-center'>
                                         <img
                                             onClick={()=>navigate(`/catalogue/${book._id}`)}
                                             src={book.image !== "none" ? book.image : Book}
@@ -228,10 +228,10 @@ function Catalogue({port}) {
 
                                         <div>
                                             <p>Available: {book.borrowed ? <span>No</span> : <span>Yes</span>}</p>
-                                            <p className='hover:text-pink-600'>
+                                            <p >
                                                 <button
                                                     onClick={()=>navigate(`/catalogue/${book._id}`)}
-                                                    className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
+                                                    className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-orange-400    focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
                                                     More Info
                                                 </button>
                                             </p>

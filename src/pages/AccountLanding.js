@@ -58,12 +58,12 @@ const AccountLanding = ({port}) => {
                     <div className="font-bold text-2xl">Welcome, {user.first_name}!</div>
                         <button
                             onClick={() => navigate(`/${user._id}/user_collection`)}
-                        className=' bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
+                        className=' bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
                         See all my books
                     </button>
                     <button
                         onClick={() => navigate(`/${user._id}/create_book`)}
-                        className='bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
+                        className='bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
                         {" "}
                         Add Book
                     </button>
@@ -71,14 +71,14 @@ const AccountLanding = ({port}) => {
                         onClick={() => {
                             setEnabledBy(!enabledBy);
                         }}
-                        className='bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
+                        className='bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
                         Borrowed by me
                     </button>
                     <button
                         onClick={() => {
                             setEnabledFrom(!enabledFrom);
                         }}
-                        className='bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
+                        className='bg-white mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
                         Borrowed from me
                     </button>
                     <Outlet />

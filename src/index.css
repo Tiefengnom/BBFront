@@ -11,8 +11,8 @@
   --error: #e7195a;
 }
 body {
-  background: rgb(250,194,142);
-  background: radial-gradient(circle, rgba(250,194,142,1) 0%, rgba(255,255,162,1) 35%, rgba(255,210,180,1) 100%);
+  background: rgb(221, 238, 240);
+  /* background: radial-gradient(circle, rgba(250,194,142,1) 0%, rgba(255,255,162,1) 35%, rgba(255,210,180,1) 100%); */
   margin: 0;
   font-family: "Poppins";
   color:black;

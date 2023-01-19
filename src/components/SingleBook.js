@@ -60,7 +60,7 @@ function SingleBook({port}) {
             <p>Language: {fetchedBook.language}</p> 
             <p>Available now? </p> {fetchedBook.borrowed ? <span>No</span> : <span>Yes</span> }</div> 
             <div className="max-w-xl p-4 md:pl-10">
-            {fetchedBook.synopsis === "none" ? <div>No synopsis available</div> : <p className="text-left mt-8 md:mt-0 border-b-2 border-pink-600 pb-8"> {fetchedBook.synopsis} </p>} 
+            {fetchedBook.synopsis === "none" ? <div>No synopsis available</div> : <p className="text-left mt-8 md:mt-0 border-b-2 border-orange-400  pb-8"> {fetchedBook.synopsis} </p>} 
             {/* <p>{fetchedBook.owner}</p> */}
            
           
@@ -72,11 +72,11 @@ function SingleBook({port}) {
                     <p>To borrow books and see their availability, please create an account or log in.</p>{" "}
                     <button
                         onClick={() => navigate("/signup")}
-                        className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[35%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
+                        className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full hover:bg-orange-400    focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
                         Sign up
                     </button> <button
                 onClick={() => navigate("/login")}
-                className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
+                className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
                 Log in
             </button> {" "}
                 </div>
@@ -93,7 +93,7 @@ function SingleBook({port}) {
                 ) : (
                     <button
                         onClick={handleClick}
-                        className='bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
+                        className='bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
                         Request Book
                     </button>
                      )
@@ -108,7 +108,7 @@ function SingleBook({port}) {
             )}
             {user._id &&  <button
                     onClick={() => navigate(`/${user._id}/user_collection`)}
-                    className='mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
+                    className='mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
                    My books
                 </button>} </div> </div>
         </div>
