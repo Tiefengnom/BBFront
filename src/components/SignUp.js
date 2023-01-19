@@ -29,8 +29,14 @@ const SignUp = ({port}) => {
             },
         });
         const json = await response.json();
-        
-        setUser(json.user);
+        b = json.user._id
+        console.log(json.user)
+       
+        if (b) {
+            setUser(json.user)
+        } else {
+            setError("Something is wrong probably your password.Next possibility is your email , maybe after that the PLZ?")
+        }
         /*if (!json.bbooks === []) {setbBooks((prev) => [...prev  , ...json.bbooks]) }*/
 
         if (!response.ok) {
@@ -42,16 +48,18 @@ const SignUp = ({port}) => {
             setlname("");
             setAdress("");
             setPLZ("");
-            setError(null);
+            
 
-            console.log("Welcome, you are signed in");
+          
         }
     };
     console.log(port);
     return (
         <div className='Signin mt-20 h-full text-left p-4'>
-            {console.log(1)}
-            {!user ? (
+           
+            {error ? <div>Something is wrong <br/><br/> probably your password.<br/><br/>Next possibility is your email ,<br/><br/> maybe after that the PLZ,<br/><br/>
+            and so forth and so on...</div> :
+            !user ? (
                 <form className='signin' onSubmit={handleSubmit}>
                     <label>First Name</label>
                     <input

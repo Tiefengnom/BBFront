@@ -32,7 +32,7 @@ const Login = ({port}) => {
         const b = json.user._id
          
         if (!b ) {
-            setError("Your Email is wrong or your password false. Please try again")
+            setError("Your Email is wrong or your password false. Please try again.")
 
         } else {
             setUser(json.user)
