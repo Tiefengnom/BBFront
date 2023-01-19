@@ -11,6 +11,8 @@ function SingleBook({port}) {
     const { user } = useUserContext();
     const navigate = useNavigate();
     const { id } = useParams();
+    const [hidden,setHidden] = useState(true)
+    const [unhidden,setUnhidden] = useState(true)
     
     
 
@@ -53,14 +55,14 @@ function SingleBook({port}) {
         <div className=' mb-2 bg-white p-3 shadow-lg rounded transition-colors border-b-2 border-transparent md:w-5/6 lg:max-w-screen-3xl m-auto'>
         <div className="flex flex-wrap md:flex-nowrap p-8"  > 
             <div className="w-96 flex flex-col justify-start text-left  bg-white-300 p-8 shadow-lg   rounded"> 
-            <img src={fetchedBook.image==='none' ? Book : fetchedBook.image} alt='book cover' className="mb-8 max-w-[150px]"/>
+            <img src={!fetchedBook.image || fetchedBook.image === "none" ? Book : fetchedBook.image } alt='book cover' className="mb-8 max-w-[150px]"/>
             <strong> {fetchedBook.title} </strong>
           
             <p>{fetchedBook.author}</p>
             <p>Language: {fetchedBook.language}</p> 
             <p>Available now? </p> {fetchedBook.borrowed ? <span>No</span> : <span>Yes</span> }</div> 
             <div className="max-w-xl p-4 md:pl-10">
-            {fetchedBook.synopsis === "none" ? <div>No synopsis available</div> : <p className="text-left mt-8 md:mt-0 border-b-2 border-orange-400  pb-8"> {fetchedBook.synopsis} </p>} 
+            {fetchedBook.synopsis === "none" ? <div>No synopsis available</div> : <p className="text-left mt-8 md:mt-0 border-b-2 border-pink-600 pb-8"> {fetchedBook.synopsis} </p>} 
             {/* <p>{fetchedBook.owner}</p> */}
            
           
@@ -72,28 +74,35 @@ function SingleBook({port}) {
                     <p>To borrow books and see their availability, please create an account or log in.</p>{" "}
                     <button
                         onClick={() => navigate("/signup")}
-                        className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full hover:bg-orange-400    focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
+                        className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[35%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
                         Sign up
                     </button> <button
                 onClick={() => navigate("/login")}
-                className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
+                className=' bg-white bg-opacity-60 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-3'>
                 Log in
             </button> {" "}
                 </div>
-            ) : //user._id === fetchedBook.owner ? (<div>Its your own Book!</div>) :
+            ) : //user._id === fetchedBook.owner ? (<div>Its your own Book</div>)
             
             !fetchedBook.borrowed ? (
-                !btime ? (
+                !btime ? (<>
+                    <div >
                     <Datetime
                         input={false}
                         onChange={(e) => {
-                            if (fetchedBook.owner._id !== user._id) {setBtime(e._d)};
+                            if (fetchedBook.owner._id !== user._id) {setBtime(e._d)}
+                            else {alert("You can not rent your own books, dummy!")
+                          }
                         }}
                     />
+                    </div>
+                    
+                    <div ></div>
+                    </>
                 ) : (
                     <button
-                        onClick={handleClick}
-                        className='bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
+                        onClick={(e) => {handleClick();alert("You have requested for Permission. You will be notified, if you are denied.")}}
+                        className='bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
                         Request Book
                     </button>
                      )
@@ -108,7 +117,7 @@ function SingleBook({port}) {
             )}
             {user._id &&  <button
                     onClick={() => navigate(`/${user._id}/user_collection`)}
-                    className='mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
+                    className='mt-6 mb-6 mr-4 inline-block px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
                    My books
                 </button>} </div> </div>
         </div>

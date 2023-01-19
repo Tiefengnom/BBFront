@@ -74,7 +74,7 @@ function MyBooks({port}) {
                                               </button>
                                           </p>
 
-                                          <p>{b.borrowed && <span>Borrowed by User-id</span>}</p>
+                                          <p>{b.borrowed && <span>This book is currently borrowed. </span>}</p>
                                           <p>{/*<strong>Description:</strong> {b.owner.last_name}*/}</p>
 
                                           <form>
