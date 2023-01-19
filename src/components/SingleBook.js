@@ -91,7 +91,7 @@ function SingleBook({port}) {
                         input={false}
                         onChange={(e) => {
                             if (fetchedBook.owner._id !== user._id) {setBtime(e._d)}
-                            else {alert("You can not rent your own books, dummy!")
+                            else {alert("You can not rent your own books, you already have it! Yeahh!")
                           }
                         }}
                     />
