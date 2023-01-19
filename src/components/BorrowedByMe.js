@@ -12,7 +12,7 @@ function BorrowedByMe({books}) {
                     <div>{b.title}</div>
                     <img
                                             onClick={()=>navigate(`/catalogue/${b._id}`)}
-                                            src={b.image || b.image === "none" ? b.image : Book}
+                                            src={!b.image || b.image === "none" ? Book :b.image }
                                             alt='book cover'
                                             className='h-[200px] m-auto mb-4'
                                         />
