@@ -13,6 +13,7 @@ const SignUp = ({port}) => {
     const [mail, setMail] = useState(null);
     const [error, setError] = useState(null);
     const { user, setUser } = useUserContext();
+    let b = ""
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,6 +29,7 @@ const SignUp = ({port}) => {
             },
         });
         const json = await response.json();
+        
         setUser(json.user);
         /*if (!json.bbooks === []) {setbBooks((prev) => [...prev  , ...json.bbooks]) }*/
 
