@@ -143,7 +143,7 @@ const SignUp = ({port}) => {
                     <div className='flex justify-center pt-2'>
                         <button
                             type='submit'
-                            className=' bg-white bg-opacity-90 px-6 py-2 w-fit font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-2'>
+                            className=' bg-white bg-opacity-90 px-6 py-2 w-fit font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer m-2'>
                             Sign up
                         </button>{" "}
                     </div>

@@ -12,7 +12,7 @@ function Cards() {
         <div className="flex justify-around flex-wrap pb-16">
             <div className='cards-home m-4'>
                 <div className='flex justify-center'>
-                    <div className=' h-[350px] rounded-lg shadow-lg  hover:hover:bg-gradient-to-br from-yellow-200 to-pink-200 p-4 w-[300px]'  onClick={() => navigate("/signup")}>
+                    <div className=' h-[350px] rounded-lg shadow-lg  hover:hover:bg-gradient-to-br from-yellow-200 to-orange-200 p-4 w-[300px]'  onClick={() => navigate("/signup")}>
                         <a href='#!' className='flex justify-center'>
                             <img
                                 className='rounded-full  w-[300px] m-0'
@@ -33,7 +33,7 @@ function Cards() {
 
             <div className='cards-home m-4'>
                 <div className='flex justify-center'>
-                    <div className='h-[350px]  rounded-lg shadow-lg p-4  hover:hover:bg-gradient-to-br from-yellow-200 to-pink-200 w-[300px]' onClick={() => navigate("/signup")}>
+                    <div className='h-[350px]  rounded-lg shadow-lg p-4  hover:hover:bg-gradient-to-br from-yellow-200 to-orange-200 w-[300px]' onClick={() => navigate("/signup")}>
                         <a href='#!' className='flex justify-center'>
                             <img
                               className='rounded-full  w-[300px] m-0'
@@ -54,7 +54,7 @@ function Cards() {
 
             <div className='cards-home m-4'>
                 <div className='flex justify-center'>
-                    <div className='h-[350px]  rounded-lg shadow-lg hover:bg-gradient-to-br from-yellow-200 to-pink-200 p-4 w-[300px]' onClick={() => navigate("/catalogue")}>
+                    <div className='h-[350px]  rounded-lg shadow-lg hover:bg-gradient-to-br from-yellow-200 to-orange-200 p-4 w-[300px]' onClick={() => navigate("/catalogue")}>
                         <a href='#!' className='flex justify-center'>
                             <img
                               className='rounded-full w-[300px] m-0'

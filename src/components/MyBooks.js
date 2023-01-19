@@ -35,7 +35,7 @@ function MyBooks({port}) {
                         ? books.length
                             ? books.map((b) => {
                                   return (
-                                      <div className='book-cardp-4 m-4 bg-white p-5 shadow-lg rounded transition-colors border-b-[4px] border-transparent hover:border-pink-500 text-gray-700 w-72 text-center'>
+                                      <div className='book-cardp-4 m-4 bg-white p-5 shadow-lg rounded transition-colors border-b-[4px] border-transparent hover:border-orange-500 text-gray-700 w-72 text-center'>
                                           <div>
                                               <img
                                                   src={b.image !== "none" ? b.image : Book}
@@ -66,10 +66,10 @@ function MyBooks({port}) {
                                               <strong>Available:</strong>{" "}
                                               {b.borrowed ? <span> No</span> : <span>Yes</span>}
                                           </p>
-                                          <p className='hover:text-pink-600'>
+                                          <p >
                                               <button
                                                   onClick={() => navigate(`/catalogue/${b._id}`)}
-                                                  className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
+                                                  className=' bg-white bg-opacity-90 px-6 py-2 border-2 border-white-500  font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out cursor:pointer'>
                                                   More info and booking
                                               </button>
                                           </p>
@@ -89,7 +89,7 @@ function MyBooks({port}) {
                                               </select>
                                               <button
                                                   type='submit'
-                                                  className='bg-orange bg-opacity-[45%]  mb-3 mr-4 inline-block px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full hover:bg-pink-600 hover:bg-opacity-[45%] focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
+                                                  className='bg-orange bg-opacity-[45%]  mb-3 mr-4 inline-block px-6 py-2 border-2 border-white-500 font-medium text-xs leading-tight  rounded-full  hover:bg-orange-400  focus:outline-none focus:ring-0 transition duration-150 ease-in-out'>
                                                   Change info or state
                                               </button>
                                           </form>

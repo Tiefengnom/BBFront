@@ -27,7 +27,7 @@ export default function Checklist({options, placeholder, setSelectedOption}) {
             ...theme.colors,
               text: 'grey',
               primary25: 'orange',
-              primary: 'hotpink',
+              primary: 'lightblue',
               borderColor: 'white',
             },
           })}
